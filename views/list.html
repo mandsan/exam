@@ -1,0 +1,41 @@
+<head>
+    <meta charset='utf-8'> 
+  </head>
+{% extends 'layout.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+
+  
+  <div id="topbar">
+            <H1>Mandsan</H1>
+              <div>
+                <a href="https://www.google.com/calendar/" style="padding-left:4px;padding-right:4px" title="Google日曆">日曆</a>
+                <a href="https://translate.google.com.tw/" style="padding-left:4px;padding-right:4px" title="Google翻譯">翻譯</a>
+                <a href="https://www.youtube.com/" style="padding-left:4px;padding-right:4px" title="Youtube">Youtube</a>
+                <a href="https://www.google.com.tw/" style="padding-left:4px;padding-right:4px" title="Google首頁">Google</a>
+              </div>
+  </div>
+        <div>
+          <img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10155521_714121295319132_132989848039368117_n.jpg?oh=7462dd6d5f623281d1c2e9d7b7e1e872&oe=55CDEFBB&__gda__=1438944498_640d4043e7e0befb69850ced3734f437">
+		</div>
+        <div> 
+          <h2>熱舞社宣傳</h2>
+          <iframe width="854" height="510" src="https://www.youtube.com/embed/RsSuzMrmTwc" frameborder="0" allowfullscreen></iframe>
+        </div>
+      <div>
+        <span>
+          <a href="">測試用留言板</a>
+        </span>
+  <p>你有<strong>{{ posts.length }}</strong>留言!</p>
+  <p><a href="/post/new">留言</a></p>
+  <ul id="posts">
+    {% for post in posts %}
+      <li>
+        <h2>{{ post.title }}</h2>
+        <p><a href="/post/{{ post.id }}">閱讀</a></p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
